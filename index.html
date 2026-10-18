@@ -1,0 +1,1246 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10071f">
+<title>GALAXY LOVE · 20/10 ✦</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #ffb8df;
+  --purple: #c7aaff;
+  --gold: #ffe6b5;
+  --glass: rgba(255,255,255,.07);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #090617;
+  color: #fff5ff;
+  font-family: "Be Vietnam Pro", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button { font: inherit; }
+
+#sky {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(ellipse at 10% 20%, #62347d88, transparent 45%),
+    radial-gradient(ellipse at 90% 75%, #773c7980, transparent 42%),
+    radial-gradient(ellipse at 50% 110%, #3c327e, transparent 55%),
+    linear-gradient(145deg, #080515, #1b1031, #0a071a);
+  animation: skyGlow 16s ease-in-out infinite alternate;
+}
+
+@keyframes skyGlow {
+  to { filter: hue-rotate(18deg) brightness(1.15); }
+}
+
+#stars, #fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#stars { z-index: -2; }
+#fireworks { z-index: 10; }
+
+.moon {
+  position: fixed;
+  right: 10%;
+  top: 12%;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #fff1d7;
+  box-shadow: 0 0 30px #ffe6d866, 0 0 90px #d8b4ff44;
+  z-index: -1;
+  animation: moonFloat 6s ease-in-out infinite;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  left: 19px;
+  top: -8px;
+  background: #15102b;
+}
+
+@keyframes moonFloat {
+  50% { transform: translateY(-12px); }
+}
+
+.aurora {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  top: 15%;
+  left: -25%;
+  width: 150%;
+  height: 35%;
+  background: linear-gradient(90deg, transparent, #b987ff18, #ff9fdc20, #a3a3ff18, transparent);
+  filter: blur(45px);
+  transform: rotate(-12deg);
+  animation: aurora 12s ease-in-out infinite alternate;
+}
+
+@keyframes aurora {
+  to { transform: translateX(6%) rotate(7deg); }
+}
+
+.topbar {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(#0a061c77, transparent);
+}
+
+.brand {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: #ffe0f5;
+}
+
+.music-label {
+  font-size: 10px;
+  color: #f5d9f7;
+  padding: 9px 12px;
+  border: 1px solid #ffffff22;
+  border-radius: 30px;
+  background: #ffffff0b;
+  backdrop-filter: blur(12px);
+}
+
+.music-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #ffb8df;
+  box-shadow: 0 0 10px #ffb8df;
+  animation: blink 1.4s infinite;
+}
+
+@keyframes blink { 50% { opacity: .35; } }
+
+#app {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 95px 18px 75px;
+}
+
+.scene {
+  display: none;
+  width: min(650px, 100%);
+  text-align: center;
+  animation: arrive .8s ease both;
+}
+
+.scene.active { display: block; }
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(22px) scale(.98); filter: blur(5px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #edc8f1;
+  margin-bottom: 18px;
+}
+
+h1, h2 {
+  font-weight: 400;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(38px, 8vw, 73px); }
+h2 { font-size: clamp(29px, 6vw, 48px); }
+
+.script {
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  color: var(--pink);
+  text-shadow: 0 0 30px #ff8bc633;
+}
+
+.gradient {
+  background: linear-gradient(110deg, #fff6ff, #ffb8df 42%, #c9b7ff 75%, #ffe9b9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  max-width: 480px;
+  margin: 18px auto 0;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 2.1;
+  color: #e3d7f2;
+}
+
+.small {
+  margin-top: 17px;
+  font-size: 10px;
+  line-height: 1.9;
+  color: #c9b8dd;
+}
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  margin-top: 24px;
+  padding: 13px 23px;
+  border-radius: 40px;
+  font-size: 12px;
+  color: #2a1235;
+  background: linear-gradient(110deg, #ffe5f5, #f6b4df, #d5c2ff);
+  box-shadow: 0 0 28px #f0a5e72a, inset 0 1px #ffffffc9;
+  transition: .25s;
+}
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 35px #ef9ddf50; }
+
+.btn.secondary {
+  color: #ffe9fa;
+  background: #ffffff0a;
+  border: 1px solid #ffffff35;
+  box-shadow: none;
+  margin-left: 5px;
+}
+
+.btn:disabled { opacity: .45; cursor: default; }
+
+.orbit-heart {
+  position: relative;
+  width: 125px;
+  height: 125px;
+  margin: 0 auto 25px;
+  display: grid;
+  place-items: center;
+}
+
+.heart {
+  font-size: 54px;
+  filter: drop-shadow(0 0 18px #ff86c7aa);
+  animation: beat 2s infinite;
+}
+
+@keyframes beat {
+  0%,100% { transform: scale(1); }
+  15% { transform: scale(1.13); }
+  30% { transform: scale(1); }
+}
+
+.orbit {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #ffc6ec44;
+  border-radius: 50%;
+  animation: spin 12s linear infinite;
+}
+
+.orbit::before {
+  content: "✦";
+  position: absolute;
+  left: 17px;
+  top: 5px;
+  color: #ffe6b5;
+  text-shadow: 0 0 10px #ffe6b5;
+}
+
+.orbit.second {
+  inset: 12px -10px;
+  border-color: #c8b2ff55;
+  animation-direction: reverse;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.card {
+  position: relative;
+  margin-top: 25px;
+  padding: clamp(24px, 5vw, 36px);
+  border: 1px solid #ffffff20;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ffffff12, #ffffff04);
+  box-shadow: 0 20px 80px #03020b35, inset 0 1px #ffffff0c;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  right: -100px;
+  top: -130px;
+  border-radius: 50%;
+  background: #d7a7ff20;
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.card-icon {
+  font-size: 37px;
+  margin-bottom: 13px;
+  filter: drop-shadow(0 0 15px #ffc0e755);
+}
+
+.wish {
+  min-height: 100px;
+  display: grid;
+  place-items: center;
+  color: #f6eafb;
+  font-size: clamp(14px, 3vw, 17px);
+  line-height: 2.1;
+  font-weight: 300;
+  position: relative;
+}
+
+.wish strong { color: #ffc6e6; font-weight: 500; }
+
+.counter {
+  color: #c9b7e4;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 15px;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.category {
+  border: 1px solid #ffffff25;
+  border-radius: 30px;
+  background: #ffffff08;
+  color: #ecdafa;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: .2s;
+}
+
+.category.active, .category:hover {
+  color: #291434;
+  background: linear-gradient(100deg, #ffe0f3, #d3c1ff);
+  border-color: transparent;
+}
+
+.letter-box {
+  perspective: 1000px;
+  width: min(290px, 85vw);
+  height: 190px;
+  margin: 34px auto 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.envelope {
+  position: absolute;
+  inset: 35px 0 0;
+  height: 145px;
+  border-radius: 8px;
+  background: linear-gradient(140deg, #ffcee9, #c4a9ff);
+  box-shadow: 0 15px 45px #d29bf733;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, #ffe1f2, #c2a2ff);
+  clip-path: polygon(0 0, 50% 58%, 100% 0);
+  transform-origin: top;
+  transition: transform .7s;
+  z-index: 3;
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(40deg, #bca0f3, #ffe1f2);
+  clip-path: polygon(0 100%, 0 0, 50% 57%, 100% 0, 100% 100%);
+  z-index: 2;
+}
+
+.letter {
+  position: absolute;
+  left: 8%;
+  top: 0;
+  width: 84%;
+  height: 118px;
+  padding: 18px 10px;
+  background: #fff8fc;
+  color: #87558c;
+  border-radius: 5px;
+  font-family: "Dancing Script", cursive;
+  font-size: 21px;
+  transition: transform .8s;
+  z-index: 1;
+}
+
+.seal {
+  position: absolute;
+  z-index: 5;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  transition: opacity .3s;
+}
+
+.envelope.open::before { transform: rotateX(180deg); }
+.envelope.open .letter { transform: translateY(-95px); z-index: 4; }
+.envelope.open .seal { opacity: 0; }
+
+.gift {
+  position: relative;
+  width: 155px;
+  height: 155px;
+  margin: 30px auto 20px;
+  cursor: pointer;
+  animation: giftFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 15px 25px #d78bd644);
+}
+
+@keyframes giftFloat { 50% { transform: translateY(-8px); } }
+
+.gift-base {
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  width: 139px;
+  height: 90px;
+  border-radius: 5px 5px 10px 10px;
+  background: linear-gradient(120deg, #f5a7d9, #b49aff);
+}
+
+.gift-base::after {
+  content: "";
+  position: absolute;
+  left: 56px;
+  width: 27px;
+  height: 100%;
+  background: linear-gradient(90deg, #ffe8ba, #fff4db, #edb6eb);
+}
+
+.gift-lid {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  left: 0;
+  width: 155px;
+  height: 28px;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #ffcae9, #d1baff);
+  transform-origin: 12% 90%;
+  transition: transform .8s;
+}
+
+.gift-lid::after {
+  content: "";
+  position: absolute;
+  left: 64px;
+  width: 27px;
+  height: 100%;
+  background: #fff0d1;
+}
+
+.gift-bow {
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  left: 54px;
+  font-size: 39px;
+  color: #fff0dc;
+}
+
+.gift.open { animation: none; }
+.gift.open .gift-lid { transform: translate(-20px, -60px) rotate(-27deg); }
+
+.final-title {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(38px, 8vw, 67px);
+  color: #ffd4ed;
+  text-shadow: 0 0 35px #ff9edc55;
+}
+
+.final-message {
+  font-size: 14px;
+  line-height: 2.1;
+  color: #f3e6fb;
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 26px;
+  color: var(--gold);
+  margin-top: 22px;
+}
+
+.progress {
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 13px 20px 18px;
+  background: linear-gradient(transparent, #08051688);
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  max-width: 570px;
+  margin: 0 auto 8px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #d8c7ea;
+}
+
+.track {
+  max-width: 570px;
+  height: 3px;
+  margin: auto;
+  border-radius: 10px;
+  background: #ffffff20;
+  overflow: hidden;
+}
+
+.fill {
+  width: 16.666%;
+  height: 100%;
+  background: linear-gradient(90deg, #c6a9ff, #ffb6de, #ffe6b5);
+  box-shadow: 0 0 12px #f5a9e7;
+  transition: width .5s;
+}
+
+.floaty {
+  position: fixed;
+  bottom: -35px;
+  pointer-events: none;
+  z-index: 3;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  15% { opacity: .7; }
+  100% { transform: translateY(-115vh) rotate(55deg); opacity: 0; }
+}
+
+.flower {
+  position: fixed;
+  z-index: 11;
+  left: 50%;
+  top: 68%;
+  transform: translate(-50%, 0);
+  font-size: 48px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flower.fly {
+  animation: flowerFly 2s ease-in forwards;
+}
+
+@keyframes flowerFly {
+  0% { opacity: 0; transform: translate(-50%, 0) scale(.4) rotate(0); }
+  15% { opacity: 1; }
+  80% { opacity: 1; transform: translate(-50%, -48vh) scale(1.1) rotate(240deg); }
+  100% { opacity: 0; transform: translate(-50%, -52vh) scale(.2) rotate(300deg); }
+}
+
+#toast {
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: 75px;
+  max-width: 90vw;
+  padding: 12px 17px;
+  border-radius: 15px;
+  background: #241537ee;
+  border: 1px solid #ffffff25;
+  color: #fff0fb;
+  font-size: 11px;
+  opacity: 0;
+  transform: translate(-50%, 12px);
+  transition: .3s;
+  pointer-events: none;
+}
+
+#toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+#youtube-player {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  left: -230px;
+  bottom: 0;
+  opacity: .01;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .topbar { padding: 15px 12px; }
+  .brand { font-size: 8px; letter-spacing: 1.4px; }
+  .music-label { font-size: 9px; padding: 8px; }
+  .moon { width: 48px; height: 48px; }
+  .moon::after { width: 46px; height: 46px; left: 15px; top: -6px; }
+  #app { padding: 82px 16px 78px; }
+  .subtitle { font-size: 12px; }
+  .card { padding: 23px 17px; }
+  .wish { min-height: 125px; font-size: 14px; }
+  .btn { padding: 12px 17px; font-size: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="sky"></div>
+<div class="aurora"></div>
+<div class="moon"></div>
+<canvas id="stars"></canvas>
+<canvas id="fireworks"></canvas>
+<div id="youtube-player"></div>
+<div class="flower" id="flower">🌸</div>
+<div id="toast"></div>
+
+<header class="topbar">
+  <div class="brand">✦ GALAXY LOVE · 20/10 ✦</div>
+  <div class="music-label"><span class="music-dot"></span><span id="musicText">Music loading...</span></div>
+</header>
+
+<main id="app">
+
+  <section class="scene active">
+    <div class="orbit-heart">
+      <div class="orbit"></div>
+      <div class="orbit second"></div>
+      <div class="heart">💗</div>
+    </div>
+    <div class="eyebrow">A universe made for you</div>
+    <h1 class="gradient">Tớ gửi cậu<br>món quà nhỏ</h1>
+    <p class="subtitle">
+      Trong hàng triệu vì sao ngoài kia,<br>
+      có một góc nhỏ tớ dành riêng cho cậu.<br>
+      Hôm nay, hãy để tớ gửi cậu một chút dịu dàng nhé.
+    </p>
+    <button class="btn" onclick="begin()">Mở vũ trụ bí mật ✨</button>
+    <p class="small">A little gift, with a lot of love ♡</p>
+  </section>
+
+  <section class="scene">
+    <div class="eyebrow">Chapter I · A special day</div>
+    <h2 class="script">Chúc mừng ngày 20/10</h2>
+    <div class="card">
+      <div class="card-icon">🌷</div>
+      <p class="wish">
+        Mong cậu luôn có đủ niềm vui để mỉm cười,
+        đủ bình yên để nghỉ ngơi và đủ yêu thương
+        để biết mình là một người thật đặc biệt.
+      </p>
+    </div>
+    <p class="subtitle">Ngày hôm nay là một dịp đặc biệt để gửi đến cậu những điều tốt đẹp nhất.</p>
+    <button class="btn" onclick="go(2)">Khám phá 30 lời chúc →</button>
+  </section>
+
+  <section class="scene">
+    <div class="eyebrow">Chapter II · A wish for you</div>
+    <h2 class="gradient">30 lời chúc dành cho cậu</h2>
+    <p class="subtitle">Chọn chủ đề, rồi chạm nút để khám phá từng lời chúc nhé 💌</p>
+
+    <div class="category-list" id="categories"></div>
+
+    <div class="card">
+      <div class="card-icon" id="wishIcon">🌟</div>
+      <p class="wish" id="wishText" aria-live="polite">Một lời chúc nhỏ đang chờ cậu...</p>
+      <div class="counter" id="wishCounter">01 / 30</div>
+    </div>
+
+    <button class="btn secondary" onclick="changeWish(-1)">← Trước</button>
+    <button class="btn" onclick="changeWish(1)">Lời chúc tiếp theo ✨</button>
+    <br>
+    <button class="btn" onclick="go(3)">Mở phong thư bí mật →</button>
+  </section>
+
+  <section class="scene">
+    <div class="eyebrow">Chapter III · A secret letter</div>
+    <h2 class="script">Có một lá thư dành cho cậu</h2>
+    <p class="subtitle">Bên trong là những điều tớ muốn gửi bằng sự chân thành.</p>
+
+    <div class="letter-box" onclick="openLetter()" role="button" tabindex="0" aria-label="Mở phong thư">
+      <div class="envelope" id="envelope">
+        <div class="letter">Tớ gửi cậu<br>món quà nhỏ ♡</div>
+        <div class="seal">💌</div>
+      </div>
+    </div>
+
+    <p class="small" id="letterHint">Chạm vào phong thư để mở</p>
+    <div class="card" id="letterContent" hidden>
+      <p class="wish">
+        Tớ mong cậu sẽ luôn nhìn thấy những điều đáng quý ở chính mình.
+        Không cần phải hoàn hảo, không cần lúc nào cũng mạnh mẽ.
+        Chỉ mong cậu có thật nhiều ngày vui, thật nhiều người tử tế,
+        và những ký ức khiến sau này nhớ lại vẫn mỉm cười. 💗
+      </p>
+    </div>
+    <button class="btn" id="letterNext" onclick="go(4)" disabled>Mở món quà cuối cùng →</button>
+  </section>
+
+  <section class="scene">
+    <div class="eyebrow">Chapter IV · The special gift</div>
+    <h2 class="gradient">Một điều kỳ diệu đang chờ</h2>
+    <p class="subtitle">Tớ đã cất một chút phép màu trong chiếc hộp này.</p>
+
+    <div class="gift" id="gift" onclick="openGift()" role="button" tabindex="0" aria-label="Mở hộp quà">
+      <div class="gift-base"></div>
+      <div class="gift-lid" id="giftLid"></div>
+      <div class="gift-bow">🎀</div>
+    </div>
+
+    <p class="small" id="giftHint">Chạm vào hộp quà để mở nhé 🎁</p>
+    <div id="giftContent" hidden>
+      <p class="subtitle">Tớ gửi cậu món quà nhỏ ♡</p>
+      <button class="btn" onclick="finale()">Mở ra phép màu 🎆</button>
+    </div>
+  </section>
+
+  <section class="scene">
+    <div class="eyebrow">Chapter V · Made with love</div>
+    <div class="orbit-heart">
+      <div class="orbit"></div>
+      <div class="orbit second"></div>
+      <div class="heart">🌸</div>
+    </div>
+    <h2 class="final-title">Chúc cậu luôn rực rỡ</h2>
+    <p class="final-message">
+      Chúc cậu luôn hạnh phúc theo cách của riêng mình.<br>
+      Chúc những ước mơ của cậu dần thành hiện thực.<br>
+      Chúc cậu gặp được những người thật lòng trân trọng cậu.<br>
+      Và mong rằng dù hôm nay hay ngày mai,<br>
+      cậu vẫn luôn tìm thấy một điều nhỏ bé để mỉm cười. ✨
+    </p>
+    <div class="signature">Tớ gửi cậu món quà nhỏ ♡</div>
+    <p class="small">Một lời chúc bé xíu giữa vũ trụ rộng lớn.</p>
+    <button class="btn" onclick="moreFireworks()">Thêm pháo hoa ✨</button>
+    <button class="btn secondary" onclick="restart()">Xem lại từ đầu ↻</button>
+  </section>
+
+</main>
+
+<footer class="progress">
+  <div class="progress-meta">
+    <span id="chapter">A UNIVERSE MADE FOR YOU</span>
+    <span id="count">01 / 06</span>
+  </div>
+  <div class="track"><div class="fill" id="fill"></div></div>
+</footer>
+
+<script>
+/* ===== 30 WISHES ===== */
+const wishes = [
+  {cat:"Hạnh phúc",icon:"🌷",text:"Chúc cậu mỗi ngày thức dậy đều có một lý do để mỉm cười."},
+  {cat:"Hạnh phúc",icon:"💗",text:"Mong niềm vui sẽ ghé thăm cậu thường xuyên hơn những nỗi buồn."},
+  {cat:"Hạnh phúc",icon:"🌈",text:"Chúc những ngày bình thường của cậu cũng trở nên đáng nhớ vì những điều nhỏ bé."},
+  {cat:"Hạnh phúc",icon:"🧸",text:"Mong cậu luôn có một nơi để trở về, một người để sẻ chia và một điều để mong chờ."},
+  {cat:"Hạnh phúc",icon:"☀️",text:"Chúc nụ cười của cậu luôn xuất hiện thật tự nhiên và rạng rỡ."},
+
+  {cat:"Bình yên",icon:"🌙",text:"Mong những ngày mệt mỏi sẽ dịu dàng trôi qua và cậu tìm được sự bình yên trong lòng."},
+  {cat:"Bình yên",icon:"☁️",text:"Chúc cậu ngủ ngon, thức dậy nhẹ nhàng và không phải lo nghĩ quá nhiều."},
+  {cat:"Bình yên",icon:"🕊️",text:"Mong cậu luôn đủ bình tĩnh trước những điều chưa như ý và đủ dịu dàng với chính mình."},
+  {cat:"Bình yên",icon:"🌿",text:"Chúc cậu có thật nhiều khoảng thời gian được nghỉ ngơi mà không cần vội vã."},
+  {cat:"Bình yên",icon:"🪷",text:"Mong trái tim cậu luôn có một góc nhỏ an yên, bất kể ngoài kia có bao nhiêu ồn ào."},
+
+  {cat:"Ước mơ",icon:"⭐",text:"Chúc những ước mơ cậu ấp ủ từng bước trở thành hiện thực."},
+  {cat:"Ước mơ",icon:"🚀",text:"Mong cậu luôn có can đảm thử những điều mới và khám phá khả năng của mình."},
+  {cat:"Ước mơ",icon:"🦋",text:"Chúc cậu trưởng thành theo cách mình mong muốn, không cần chạy theo nhịp độ của bất kỳ ai."},
+  {cat:"Ước mơ",icon:"🌠",text:"Mong những nỗ lực thầm lặng của cậu một ngày được đền đáp bằng kết quả thật đẹp."},
+  {cat:"Ước mơ",icon:"🔮",text:"Chúc tương lai của cậu có nhiều cánh cửa tốt đẹp mở ra đúng lúc."},
+
+  {cat:"May mắn",icon:"🍀",text:"Chúc cậu gặp nhiều may mắn trong học tập, công việc và mọi dự định."},
+  {cat:"May mắn",icon:"🎀",text:"Mong mỗi lần bước ra ngoài, cậu đều gặp một điều gì đó khiến ngày hôm ấy tốt hơn."},
+  {cat:"May mắn",icon:"✨",text:"Chúc những cơ hội đẹp luôn đến với cậu khi cậu đã sẵn sàng đón nhận."},
+  {cat:"May mắn",icon:"🪄",text:"Mong những điều cậu mong đợi sẽ dần xuất hiện theo cách bất ngờ và dễ thương."},
+  {cat:"May mắn",icon:"🌻",text:"Chúc cậu luôn có đủ sức khỏe, năng lượng và sự tự tin để làm điều mình yêu."},
+
+  {cat:"Tình bạn",icon:"💌",text:"Mong cậu luôn gặp được những người lắng nghe cậu bằng sự chân thành."},
+  {cat:"Tình bạn",icon:"🫶",text:"Chúc quanh cậu luôn có những người sẵn lòng ở bên và cùng cậu tạo nên kỷ niệm đẹp."},
+  {cat:"Tình bạn",icon:"🌸",text:"Mong cậu được yêu quý vì chính con người thật của mình, không phải vì phải cố gắng làm vừa lòng tất cả."},
+  {cat:"Tình bạn",icon:"🎈",text:"Chúc những cuộc trò chuyện với người cậu quý luôn khiến thời gian trôi nhanh hơn một chút."},
+  {cat:"Tình bạn",icon:"🧁",text:"Mong cậu nhận được thật nhiều lời hỏi thăm, sự quan tâm và những bất ngờ dễ thương."},
+
+  {cat:"Lời nhắn bí mật",icon:"💫",text:"Nếu hôm nay chưa ai nói với cậu điều này: cậu xứng đáng được đối xử bằng sự tử tế."},
+  {cat:"Lời nhắn bí mật",icon:"💎",text:"Đừng quên trân trọng những điều tốt đẹp trong cậu, kể cả những điều người khác chưa nhận ra."},
+  {cat:"Lời nhắn bí mật",icon:"📮",text:"Mong một ngày nào đó, cậu nhìn lại hành trình của mình và tự hào vì đã không bỏ cuộc."},
+  {cat:"Lời nhắn bí mật",icon:"🌌",text:"Giữa vũ trụ rộng lớn này, mong cậu luôn tìm được những người khiến mình cảm thấy được thấu hiểu."},
+  {cat:"Lời nhắn bí mật",icon:"💖",text:"Lời chúc cuối cùng: mong cậu có một ngày 20/10 thật đẹp, và nhiều ngày sau đó cũng dịu dàng như thế."}
+];
+
+const scenes = [...document.querySelectorAll(".scene")];
+const names = ["A UNIVERSE MADE FOR YOU","A SPECIAL DAY","30 LITTLE WISHES","A SECRET LETTER","THE GIFT","MADE WITH LOVE"];
+let page = 0;
+let wishIndex = 0;
+let activeCategory = "Tất cả";
+let letterOpened = false;
+let giftOpened = false;
+let finaleDone = false;
+
+function go(n) {
+  if (n < 0 || n >= scenes.length) return;
+  if (page === 3 && n > 3 && !letterOpened) {
+    toast("Mở phong thư trước nhé 💌");
+    return;
+  }
+  if (page === 4 && n > 4 && !giftOpened) {
+    toast("Mở hộp quà để khám phá bất ngờ nhé 🎁");
+    return;
+  }
+
+  scenes[page].classList.remove("active");
+  page = n;
+  scenes[page].classList.add("active");
+  document.getElementById("chapter").textContent = names[page];
+  document.getElementById("count").textContent =
+    String(page + 1).padStart(2, "0") + " / 06";
+  document.getElementById("fill").style.width = ((page + 1) / 6 * 100) + "%";
+  requestSound();
+  sparkle(innerWidth / 2, innerHeight * .45, 15);
+}
+
+function begin() {
+  requestSound();
+  go(1);
+  floating(8);
+}
+
+/* ===== WISH CATEGORIES ===== */
+const categoryNames = ["Tất cả", ...new Set(wishes.map(w => w.cat))];
+const categories = document.getElementById("categories");
+
+categoryNames.forEach(name => {
+  const button = document.createElement("button");
+  button.className = "category" + (name === "Tất cả" ? " active" : "");
+  button.textContent = name;
+  button.onclick = () => {
+    activeCategory = name;
+    categories.querySelectorAll(".category").forEach(b => {
+      b.classList.toggle("active", b.textContent === name);
+    });
+    const list = visibleWishes();
+    wishIndex = 0;
+    renderWish();
+  };
+  categories.appendChild(button);
+});
+
+function visibleWishes() {
+  return activeCategory === "Tất cả"
+    ? wishes
+    : wishes.filter(w => w.cat === activeCategory);
+}
+
+function renderWish() {
+  const list = visibleWishes();
+  if (!list.length) return;
+  wishIndex = (wishIndex + list.length) % list.length;
+
+  const wish = list[wishIndex];
+  document.getElementById("wishIcon").textContent = wish.icon;
+  document.getElementById("wishText").textContent = wish.text;
+  document.getElementById("wishCounter").textContent =
+    String(wishIndex + 1).padStart(2, "0") + " / " +
+    String(list.length).padStart(2, "0");
+}
+
+function changeWish(step) {
+  const list = visibleWishes();
+  wishIndex = (wishIndex + step + list.length) % list.length;
+  renderWish();
+  sparkle(innerWidth / 2, innerHeight * .48, 10);
+}
+
+/* ===== ENVELOPE ===== */
+function openLetter() {
+  requestSound();
+  if (letterOpened) return;
+  letterOpened = true;
+  document.getElementById("envelope").classList.add("open");
+  document.getElementById("letterHint").textContent = "Một lời nhắn chân thành dành cho cậu ♡";
+
+  setTimeout(() => {
+    document.getElementById("letterContent").hidden = false;
+    document.getElementById("letterNext").disabled = false;
+    sparkle(innerWidth / 2, innerHeight * .5, 30);
+  }, 650);
+}
+
+/* ===== GIFT ===== */
+function openGift() {
+  requestSound();
+  if (giftOpened) return;
+  giftOpened = true;
+  document.getElementById("gift").classList.add("open");
+  document.getElementById("giftHint").textContent = "Phép màu đang xuất hiện...";
+  sparkle(innerWidth / 2, innerHeight * .55, 35);
+
+  setTimeout(() => {
+    document.getElementById("giftContent").hidden = false;
+    document.getElementById("giftHint").textContent = "Một điều kỳ diệu đang chờ 🌸";
+  }, 700);
+}
+
+function finale() {
+  if (finaleDone) return;
+  finaleDone = true;
+
+  const flower = document.getElementById("flower");
+  flower.classList.remove("fly");
+  void flower.offsetWidth;
+  flower.classList.add("fly");
+
+  setTimeout(() => {
+    go(5);
+    fireworkShow();
+  }, 1500);
+  setTimeout(fireworkShow, 2400);
+}
+
+function moreFireworks() {
+  fireworkShow();
+  floating(15);
+  sparkle(innerWidth / 2, innerHeight * .4, 40);
+}
+
+function restart() {
+  page = 0;
+  wishIndex = 0;
+  activeCategory = "Tất cả";
+  letterOpened = false;
+  giftOpened = false;
+  finaleDone = false;
+
+  document.getElementById("envelope").classList.remove("open");
+  document.getElementById("letterContent").hidden = true;
+  document.getElementById("letterNext").disabled = true;
+  document.getElementById("letterHint").textContent = "Chạm vào phong thư để mở";
+  document.getElementById("gift").classList.remove("open");
+  document.getElementById("giftContent").hidden = true;
+  document.getElementById("giftHint").textContent = "Chạm vào hộp quà để mở nhé 🎁";
+  document.getElementById("flower").classList.remove("fly");
+
+  categories.querySelectorAll(".category").forEach(b => {
+    b.classList.toggle("active", b.textContent === "Tất cả");
+  });
+
+  renderWish();
+  go(0);
+}
+
+/* ===== FLOATING DECORATIONS ===== */
+function floating(amount = 6) {
+  const symbols = ["♡", "✦", "✧", "🌸", "💗"];
+  for (let i = 0; i < amount; i++) {
+    const el = document.createElement("div");
+    el.className = "floaty";
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.fontSize = (12 + Math.random() * 15) + "px";
+    el.style.color = ["#ffb8df", "#d3bfff", "#ffe6b5"][i % 3];
+    el.style.animationDuration = (7 + Math.random() * 7) + "s";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 15000);
+  }
+}
+setInterval(() => {
+  if (!document.hidden && Math.random() > .3) floating(1);
+}, 1800);
+
+/* ===== STARFIELD ===== */
+const starCanvas = document.getElementById("stars");
+const starCtx = starCanvas.getContext("2d");
+let stars = [];
+let W = innerWidth, H = innerHeight;
+let DPR = Math.min(devicePixelRatio || 1, 2);
+
+function resizeCanvas(canvas, ctx) {
+  DPR = Math.min(devicePixelRatio || 1, 2);
+  W = innerWidth;
+  H = innerHeight;
+  canvas.width = W * DPR;
+  canvas.height = H * DPR;
+  canvas.style.width = W + "px";
+  canvas.style.height = H + "px";
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+
+function initStars() {
+  resizeCanvas(starCanvas, starCtx);
+  stars = Array.from({length: Math.min(220, Math.floor(W * H / 4000))}, () => ({
+    x: Math.random() * W,
+    y: Math.random() * H,
+    r: Math.random() * 1.5 + .2,
+    phase: Math.random() * 7,
+    speed: Math.random() * .02 + .004
+  }));
+}
+
+function drawStars() {
+  starCtx.clearRect(0, 0, W, H);
+  for (const s of stars) {
+    s.phase += s.speed;
+    const alpha = .2 + (Math.sin(s.phase) + 1) * .3;
+    starCtx.beginPath();
+    starCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    starCtx.fillStyle = `rgba(255,238,255,${alpha})`;
+    starCtx.fill();
+  }
+  requestAnimationFrame(drawStars);
+}
+
+/* ===== FIREWORKS ===== */
+const fwCanvas = document.getElementById("fireworks");
+const fwCtx = fwCanvas.getContext("2d");
+let particles = [];
+const palette = ["#ffc1e5", "#e0c7ff", "#ffe8b8", "#ff8fca", "#bdaaff", "#ffffff"];
+
+function resizeAll() {
+  initStars();
+  resizeCanvas(fwCanvas, fwCtx);
+}
+window.addEventListener("resize", resizeAll);
+resizeAll();
+drawStars();
+
+function burst(x, y, count = 55) {
+  const color = palette[Math.floor(Math.random() * palette.length)];
+  for (let i = 0; i < count; i++) {
+    const a = Math.PI * 2 * i / count;
+    const speed = Math.random() * 3.7 + .6;
+    particles.push({
+      x, y,
+      vx: Math.cos(a) * speed,
+      vy: Math.sin(a) * speed,
+      life: 1,
+      decay: Math.random() * .014 + .009,
+      size: Math.random() * 2.2 + .6,
+      color,
+      gravity: .03,
+      petal: Math.random() > .65,
+      rotation: Math.random() * 6,
+      spin: (Math.random() - .5) * .12
+    });
+  }
+}
+
+function sparkle(x, y, count = 18) {
+  for (let i = 0; i < count; i++) {
+    const a = Math.random() * Math.PI * 2;
+    const speed = Math.random() * 2.7 + .3;
+    particles.push({
+      x, y,
+      vx: Math.cos(a) * speed,
+      vy: Math.sin(a) * speed,
+      life: 1,
+      decay: .025 + Math.random() * .02,
+      size: Math.random() * 2 + .5,
+      color: palette[Math.floor(Math.random() * palette.length)],
+      gravity: .015,
+      petal: false,
+      rotation: 0,
+      spin: 0
+    });
+  }
+}
+
+function fireworkShow() {
+  burst(W * .25, H * .3, 70);
+  burst(W * .75, H * .28, 70);
+  setTimeout(() => burst(W * .5, H * .22, 90), 250);
+  setTimeout(() => burst(W * .35, H * .42, 50), 550);
+  setTimeout(() => burst(W * .68, H * .4, 50), 800);
+}
+
+function drawFireworks() {
+  fwCtx.clearRect(0, 0, W, H);
+  particles = particles.filter(p => p.life > 0);
+
+  for (const p of particles) {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vx *= .991;
+    p.vy = p.vy * .991 + p.gravity;
+    p.life -= p.decay;
+    p.rotation += p.spin;
+
+    fwCtx.save();
+    fwCtx.globalAlpha = Math.max(0, p.life);
+    fwCtx.fillStyle = p.color;
+    fwCtx.translate(p.x, p.y);
+    fwCtx.rotate(p.rotation);
+    fwCtx.beginPath();
+
+    if (p.petal) fwCtx.ellipse(0, 0, p.size, p.size * 2.2, 0, 0, Math.PI * 2);
+    else fwCtx.arc(0, 0, p.size, 0, Math.PI * 2);
+
+    fwCtx.fill();
+    fwCtx.restore();
+  }
+  requestAnimationFrame(drawFireworks);
+}
+drawFireworks();
+
+/* ===== TOAST ===== */
+let toastTimer;
+function toast(message) {
+  const el = document.getElementById("toast");
+  el.textContent = message;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 2300);
+}
+
+/* ===== YOUTUBE MUSIC ===== */
+const VIDEO_ID = "uUXrMBkY49w";
+let player = null;
+let playerReady = false;
+let soundRequested = false;
+
+function musicLabel(text) {
+  document.getElementById("musicText").textContent = text;
+}
+
+function requestSound() {
+  soundRequested = true;
+  if (!playerReady || !player) {
+    musicLabel("Đang tải nhạc...");
+    return;
+  }
+
+  try {
+    player.unMute();
+    player.setVolume(65);
+    player.playVideo();
+    musicLabel("Nhạc nền đang phát");
+  } catch {
+    musicLabel("Chờ phát nhạc...");
+  }
+}
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("youtube-player", {
+    width: "200",
+    height: "200",
+    videoId: VIDEO_ID,
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      loop: 1,
+      playlist: VIDEO_ID,
+      playsinline: 1,
+      rel: 0
+    },
+    events: {
+      onReady: event => {
+        playerReady = true;
+        event.target.mute();
+        event.target.playVideo();
+        musicLabel("Nhạc đã sẵn sàng");
+        if (soundRequested) requestSound();
+      },
+      onStateChange: event => {
+        if (event.data === YT.PlayerState.PLAYING) {
+          if (soundRequested) {
+            player.unMute();
+            player.setVolume(65);
+            musicLabel("Nhạc nền đang phát");
+          } else {
+            musicLabel("Chạm để nghe nhạc");
+          }
+        }
+      },
+      onError: () => musicLabel("Video không khả dụng")
+    }
+  });
+}
+
+const ytScript = document.createElement("script");
+ytScript.src = "https://www.youtube.com/iframe_api";
+ytScript.onerror = () => musicLabel("Không tải được nhạc");
+document.head.appendChild(ytScript);
+
+["pointerdown", "keydown", "touchstart"].forEach(type => {
+  document.addEventListener(type, function unlock() {
+    requestSound();
+    document.removeEventListener(type, unlock);
+  }, {passive: true});
+});
+
+/* Keyboard accessibility */
+document.querySelector(".letter-box").addEventListener("keydown", e => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    openLetter();
+  }
+});
+document.getElementById("gift").addEventListener("keydown", e => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    openGift();
+  }
+});
+
+/* Initial progress */
+renderWish();
+</script>
+</body>
+</html>
